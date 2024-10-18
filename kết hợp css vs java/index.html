@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>kết hợp javascript và css</title>
+<style>
+#NoiDung{
+border-style: double; 
+border-width: 3px; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+.TieuDe{
+ font-size:30pt;
+ font-weight:bold;
+}
+.NoiDung{
+ font-size:15pt;
+ font-weight:italic;
+}
+</style>
+<script>
+function MauXanh()
+{
+	NoiDung.style.backgroundColor="Green";
+}
+function MauDo()
+{
+	NoiDung.style.backgroundColor="Blue";
+}
+function MauVang()
+{
+	NoiDung.style.backgroundColor="Yellow";
+}
+function KhongMau()
+{
+	NoiDung.style.backgroundColor="White";
+}
+function CoChu() {
+     var cboCoChu = document.getElementById("cboCoChu");
+     document.getElementById("NoiDung").style.fontSize = cboCoChu.value;
+        }
+ function DatChieuCao() {
+     var cboChieuCao = document.getElementById("cboChieuCao");
+    document.getElementById("NoiDung").style.height = cboChieuCao.value;
+        }
+
+ function TangChieuCao() {
+    var currentHeight = parseInt(document.getElementById("NoiDung").style.height) || 0;
+     document.getElementById("NoiDung").style.height = (currentHeight + 20) + "px";
+        }     
+ function NapNoiDung()
+{
+	NoiDung.className = "NoiDung"
+}
+function NapTieuDe()
+{
+	NoiDung.className = "TieuDe"
+}        
+
+
+
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+</script>
+<p>JAVASCRIPT và CSS</p>
+<p><input type="button" value="Xanh" name="B3" onclick="MauXanh()">
+<input type="button" value="  Đỏ  " name="B4" onclick="MauDo()">
+<input type="button" value="Vàng" name="B5" onclick="MauVang()">
+<input type="button" value="Không màu" name="B6" onclick="KhongMau()"></p>
+<p>
+    <select id="cboCoChu" size="1">
+        <option value="20px">20px</option>
+        <option value="40px">40px</option>
+        <option value="90px">90px</option>
+    </select>
+    <input type="button" value="Đặt cỡ chữ" onclick="CoChu()">
+</p>
+
+<select id="cboChieuCao" size="1">
+    <option value="100px">100px</option>
+    <option value="200px">200px</option>
+    <option value="400px">400px</option>
+</select>
+<input type="button" value="Đặt chiều cao" onclick="DatChieuCao()">
+<input type="button" value="Tăng chiều cao" onclick="TangChieuCao()">
+</p>
+
+<input type="button" value="Nạp css tiêu đề" name="B9" onclick="NapTieuDe()" ></p>
+<input type="button" value="Nạp css nội dung" name="B10" onclick="NapNoiDung()"></p>
+<div id="NoiDung">
+#NoiDung: Xin chào các bạn!
+</div>
+</body>
+
+</html>
